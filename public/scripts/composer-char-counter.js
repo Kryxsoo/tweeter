@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    let maxLength = 140;
+    let maxLength = 139;
     let textBox = $('#tweet-text');
     let counter = $('.counter');
 

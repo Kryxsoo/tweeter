@@ -1,6 +1,6 @@
 .newTweetContainer article {
     border: 2px solid black;
-    margin: 3px 0px;
+    margin: 15px 0px;
     width: 600px;
 }
 
@@ -13,17 +13,32 @@
     width: 500px;
 }
 .tweet {
-    display:flex;
+    display: flex;
     width: 95%;
     margin-left: 5px;
     margin-top: 5px;
 }
 
-.authorLogo {
+
+.tweeter {
+    width: 100%;
+    flex-grow: 1;
+}
+
+.counter {
+    font-weight: bold;
+}
+
+/* .authorLogo {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     margin-right: 10px;
+} */
+
+.content {
+    word-wrap: break-word;
+    width: 100%;
 }
 
 .tweetHeader {
