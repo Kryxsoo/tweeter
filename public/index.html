@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Information -->
+    <title>Tweeter - Home Page</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+    <!-- App CSS -->
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweetArticle.css" type="text/css" />
+
+    <!-- External JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <!-- mustacheJS -->
+    <script src="https://raw.github.com/jonnyreeves/jquery-Mustache/master/jquery.mustache.js"></script>
+    <script src="https://raw.github.com/janl/mustache.js/master/mustache.js"></script>
+  </head>
+ 
+  <body>
+    <!-- Top nav bar (fixed) -->
+    <nav>
+          <span>tweeter</span>
+          <div class="naviR">
+            <span>Write a new tweet</span>
+            <i class="fa-solid fa-angles-down"></i>
+          </div>
+    </nav>
+
+    <header>
+      <div class="logo">
+        <div>
+            <img src="/images/profile-hex.png"> 
+        </div>
+        <br>
+        <div>
+            <h2>Mathew Charm</h2>
+        </div>
+      </div>
+  </header>
+
+    <!-- Page-specific (main) content here -->
+
+    <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form>
+          <label for="tweet-text">What are you humming about?</label>
+          <input name="text" id="tweet-text"></input>
+          <div>
+            <button type="submit" id="tweetButton">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+
+    <section id="newTweet" class="newTweetContainer">
+      <article>
+        <div class="tweet">
+          <i class="fa-regular fa-face-smile"></i>
+          <div class="tweeter">
+            <div class="tweetMain">
+              <div class="tweetHeader">
+                <div class="author">
+                  Matt
+                </div>
+                <div class="handle">
+                  @mattC
+                </div>
+              </div>
+              <div class="content">
+                Hodor Hodor Hodor Hodor Hodor Hodor Hodor Hodor Hodor Hodor Hodor Hodor
+              </div>
+              <div class="tweetFooter">
+                <div class="footerLeft">
+                  <div>10 days</div>
+                </div>
+                <div class="footerRight">
+                  <i class="fa-solid fa-flag tweetIcons" ></i>
+                  <i class="fa-solid fa-retweet tweetIcons"></i>
+                  <i class="fa-solid fa-heart tweetIcons"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    </div>
+  </main>
+  <script src="/scripts/articleTweet.js"></script>
+  </body>
+</html>

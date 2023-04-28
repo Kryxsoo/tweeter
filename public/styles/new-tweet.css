@@ -1,0 +1,38 @@
+.new-tweet {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.tweetTop {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+}
+
+.tweetBot {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.tweetButton {
+    background-color: blue;
+    color: white;
+}
+
+    .humming {
+        border-bottom: 3px solid black;
+    }
+
+.red {
+    color: red;
+}
+
+input {
+    background: transparent;
+    border: 0px;
+    border-bottom: 2px solid black;
+}
+
+input:focus {
+    outline: none;
+}
