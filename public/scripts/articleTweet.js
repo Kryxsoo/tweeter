@@ -18,19 +18,6 @@ $(document).ready(() => {
     });
   });
 
-  const tweetData2 = 
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1682612300701
-    }
-
     const createTweet = (tweetData) => {
       return `
       <article>

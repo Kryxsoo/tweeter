@@ -53,17 +53,17 @@
 
 
       <main class="container">
+        <form action="/tweets" method="POST" id="new-tweet-form">
         <section class="new-tweet">
           <div class="tweetBox">
-            <!-- <label for="tweet-text">What are you humming about?</label> -->
             <input name="text" id="tweet-text" placeholder="What are you humming about?"></input>
           </div>
           <div class="tweetBottom">
-            <button type="submit" id="tweetButton">Tweet</button>
+            <button type="submit" id="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
+        </form>
         </section>
-
 
     <section id="newTweet" class="newTweetContainer">
       <!-- Tweet goes here -->
