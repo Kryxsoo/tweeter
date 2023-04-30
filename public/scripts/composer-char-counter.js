@@ -8,11 +8,15 @@ $(document).ready(function() {
     textBox.keydown(function() {
         let characters = $(this).val().length;
         let remaining = maxLength - characters
-        counter.text(remaining);
         if (remaining < 0) {
+          alert('You have exceeded the count!')
+        } else {
+          counter.text(remaining);
+          if (remaining < 0) {
             counter.addClass('red');
           } else {
             counter.removeClass('red');
           }
+        }
     })
   });
