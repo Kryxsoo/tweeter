@@ -12,6 +12,7 @@ const renderTweets = function(tweets) {
 }
 
 const createTweetElement = function(tweet) {
+    const timeStamp = timeago.format(tweet.created_at)
   let $tweet = $(`
   <article>
   <div class="tweet">
@@ -31,7 +32,7 @@ const createTweetElement = function(tweet) {
         </div>
         <div class="tweetFooter">
           <div class="footerLeft">
-            <div>${tweet.created_at}</div>
+            <div>${timeStamp}</div>
           </div>
           <div class="footerRight">
             <i class="fa-solid fa-flag tweetIcons" ></i>
@@ -47,7 +48,7 @@ const createTweetElement = function(tweet) {
   return $tweet
 }
 
-const fetchTweets = () => {
+const loadTweets = () => {
     $.ajax({
         method: 'GET',
         url: '/tweets',
@@ -55,7 +56,7 @@ const fetchTweets = () => {
         renderTweets(tweets);
     });
 };
-fetchTweets();
+loadTweets();
 
 const $form = $('#new-tweet-form');
 
@@ -72,7 +73,7 @@ $form.on('submit', (event) => {
         data: data
     }).then(() => {
         console.log('request resolved');
-        fetchTweets();
+        loadTweets();
     })
 })
 });
