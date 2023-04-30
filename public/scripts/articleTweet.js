@@ -7,25 +7,61 @@ $(document).ready(() => {
       // console.log('i got clicked!!');
       const $input = $('#tweet-text');
       const value = $input.val();
-
-      let tmpl = $('#tweetTemplate').html();
-      // Mustache.parse(tmpl);
       
       const tweetData = {tweetPost: value}
-      const oneTweet = Mustache.render(tmpl, tweetData)
+      const oneTweetTwo = createTweet(tweetData)
       // console.log(typeof oneTweet);
-      $(oneTweet).prependTo($mainList);
+      $(oneTweetTwo).prependTo($mainList);
 
       $input.val('');
       $input.focus();
     });
   });
 
+  const tweetData2 = 
+    {
+      "user": {
+        "name": "Newton",
+        "avatars": "https://i.imgur.com/73hZDYK.png",
+        "handle": "@SirIsaac"
+      },
+      "content": {
+        "text": "If I have seen further it is by standing on the shoulders of giants"
+      },
+      "created_at": 1682612300701
+    }
 
-  // caused bubbling
-  // $( "a" ).on( "click", function( event ) {
-  //   event.preventDefault();
-  //   $( "<div>" )
-  //     .append( "default " + event.type + " prevented" )
-  //     .appendTo( "#log" );
-  // }); 
+    const createTweet = (tweetData) => {
+      return `
+      <article>
+      <div class="tweet">
+        <i class="fa-regular fa-face-smile"></i>
+        <div class="tweeter">
+          <div class="tweetMain">
+            <div class="tweetHeader">
+              <div class="author">
+                Matt
+              </div>
+              <div class="handle">
+                @mattC
+              </div>
+            </div>
+            <div class="content">
+              ${tweetData.tweetPost}
+            </div>
+            <div class="tweetFooter">
+              <div class="footerLeft">
+                <div>10 days</div>
+              </div>
+              <div class="footerRight">
+                <i class="fa-solid fa-flag tweetIcons" ></i>
+                <i class="fa-solid fa-retweet tweetIcons"></i>
+                <i class="fa-solid fa-heart tweetIcons"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+      `
+    }
