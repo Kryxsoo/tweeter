@@ -1,23 +1,10 @@
 
-$(document).ready(() => {
-
-const renderTweets = function(tweets) {
-  const $newTweetSection = $('#newTweet')
-  $newTweetSection.empty();
-
-  tweets.forEach((tweet) => {
-    const $tweet = createTweetElement(tweet)
-    $tweet.prependTo($newTweetSection)
-})
-}
-
-const escape = function (str) {
+const createTweetElement = function(tweet) {
+  const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
-
-const createTweetElement = function(tweet) {
     const timeStamp = timeago.format(tweet.created_at)
     
   let $tweet = $(`
@@ -54,11 +41,50 @@ const createTweetElement = function(tweet) {
   `)
   return $tweet
 }
+const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
+
+$(document).ready(() => {
+
+const renderTweets = function(tweets) {
+  const $newTweetSection = $('#newTweet')
+  const $input = $('#tweet-text');
+  $newTweetSection.empty();
+
+  tweets.forEach((tweet) => {
+    const $tweet = createTweetElement(tweet)
+    $tweet.prependTo($newTweetSection)
+
+    $input.val('');
+    $input.focus();
+})
+}
+
+
+
+// const loadTweets = () => {
+//   $.ajax({
+//     url: '/tweets',
+//     method: 'GET',
+//     dataType: 'json',
+//     success: (tweets) => {
+//       renderTweets(tweets);
+//     },
+//     error: (error) => {
+//       console.error(error);
+//     }
+//   });
+// };
 
 const loadTweets = () => {
     $.ajax({
         method: 'GET',
         url: '/tweets',
+        dataType: 'JSON'
     }).then((tweets) => {
         renderTweets(tweets);
     });
@@ -68,11 +94,27 @@ loadTweets();
 const $form = $('#new-tweet-form');
 
 $form.on('submit', (event) => {
+  let maxLength = 10;
+  let $tweetErrors = $('#tweetErrors');
+  $tweetErrors.hide();
+  const $input = $('#tweet-text')
     event.preventDefault();
     console.log('submitted');
 
     const data = $form.serialize();
-    console.log(data);
+    // console.log("hellllooo: ",$input.val());
+
+    if ($input.val() === '') {
+      $tweetErrors.text('⚠️ Tweet cannot be empty.');
+      $tweetErrors.slideDown('slow');
+      return;
+    }
+    
+    if ($input.val().length > maxLength) {
+      $tweetErrors.text('⚠️ Tweet cannot exceed 10 characters.');
+      $tweetErrors.slideDown('slow');
+      return;
+    }
 
     $.ajax({
         method: 'POST',
@@ -82,5 +124,6 @@ $form.on('submit', (event) => {
         console.log('request resolved');
         loadTweets();
     })
+    
 })
 });
