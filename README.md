@@ -6,9 +6,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
-!["Screenshot of Main Page"]('https://github.com/Kryxsoo/tweeter/blob/main/doc/Tablet.png')
-!["Screenshot of Mobile Page"]('https://github.com/Kryxsoo/tweeter/blob/main/doc/mobile.png')
-!["Screenshot of an Error Page"]('https://github.com/Kryxsoo/tweeter/blob/main/doc/mobile-error.png')
+!["Screenshot of Main Page"]('https://github.com/Kryxsoo/tweeter/blob/main/doc/Tablet.png?raw=true')
+!["Screenshot of Mobile Page"]('https://github.com/Kryxsoo/tweeter/blob/main/doc/mobile.png?raw=true')
+!["Screenshot of an Error Page"]('https://github.com/Kryxsoo/tweeter/blob/main/doc/mobile-error.png?raw=true')
 
 ## Getting Started
 
