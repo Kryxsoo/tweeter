@@ -78,7 +78,7 @@ loadTweets();
 const $form = $('#new-tweet-form');
 //-------------------- Submit Form --------------------------//
 $form.on('submit', (event) => {
-  let maxLength = 10;
+  let maxLength = 140;
   let $tweetErrors = $('#tweetErrors');
   $tweetErrors.hide();
   const $input = $('#tweet-text')

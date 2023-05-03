@@ -1,8 +1,7 @@
 $(document).ready(function() {
-  let maxLength = 10;
+  let maxLength = 140;
   let textBox = $('#tweet-text');
   let counter = $('.counter');
-  let newTweet = $('#newTweet');
 
   textBox.on('input', function() {
     let characters = $(this).val().length;
@@ -14,24 +13,4 @@ $(document).ready(function() {
       counter.removeClass('red');
     }
   });
-
-  // $('#new-tweet-form').submit(function(event) {
-  //   event.preventDefault();
-
-  //   let tweetContent = textBox.val().trim();
-  //   if (!tweetContent) {
-  //     newTweet.text('⚠️ Tweet cannot be empty.');
-  //     newTweet.slideDown('slow');
-  //   } else if (maxLength - tweetContent.length < 0) {
-  //     newTweet.text('⚠️ Tweet cannot exceed 140 characters.');
-  //     newTweet.slideDown('slow');
-  //   } else {
-  //     if (newTweet.is(':visible')) {
-  //       newTweet.slideUp('slow');
-  //     }
-  //     else {
-  //       this.submit();
-  //     }
-  //   }
-  // });
 });
