@@ -4,16 +4,16 @@ width: 100%;
 background-color: #4056A1;
 color: #FFFFFF;
 font-family: 'Bungee', cursive;
+top: 0px;
 padding-left: 1.5em;
 padding-right: 1.5em;
 position: fixed;
-font-size: 1.5em;
+font-size: 1em;
 display: flex;
 flex-direction: row;
 align-items: center;
 justify-content: space-between;
 }
-
 
 .naviR {
     display:flex;
@@ -22,10 +22,10 @@ justify-content: space-between;
     align-items: center;
 }
 
-/* 120 pixels in height
-Full width of the viewport
-#4056A1 as its default background colour
-#FFFFFF as its default font colour
-<span> within the <nav> uses Bungee as its default font-family
-1.5ems of space on the right and left between the content and the edges
- */
+
+@media only screen and (min-width: 420px)  {
+    nav {
+        height: 150px;
+      font-size: 1.5em;
+    }
+  }

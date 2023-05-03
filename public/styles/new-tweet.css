@@ -1,6 +1,11 @@
 .new-tweet {
     font-family: 'Source Sans Pro', sans-serif;
-    width: 600px;
+    width: 300px;
+}
+
+#new-tweet-form {
+  width:100%;
+  max-width: 600px;
 }
 
 .tweetBox {
@@ -47,7 +52,6 @@ input:focus {
   margin: 0;
   outline: none;
   padding: 8px .8em;
-  position: relative;
   text-align: center;
   text-decoration: none;
   user-select: none;
@@ -69,4 +73,10 @@ input:focus {
 #submit:active {
   background-color: #0064bd;
   box-shadow: none;
+}
+
+@media only screen and (min-width: 420px)  {
+  .new-tweet {
+    width: 100%;
+  }
 }

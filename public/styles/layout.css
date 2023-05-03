@@ -1,8 +1,3 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
 html {
   box-sizing: border-box;
 }
@@ -10,36 +5,30 @@ html {
   box-sizing: inherit;
 }
 
-/* Fonts
-font-family: 'Bungee', cursive;
-font-family: 'Source Sans Pro', sans-serif;
-*/
-
-/*
- * Global layout stuff
- */
+.profileHeader {
+  background-color:#4056A1;
+  position: fixed;
+  top: 119px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  color:aliceblue;
+}
 
 body {
   color: #545149;
   background-color: #a4ad71;
   background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
-  font-size: 24px;
+  font-size: 15px;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
 .container {
-  width: 90%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
- @media only screen and (max-width: 420px) {
-  /* Write smartphone only styles here */
+  display:flex;
+  width:100%;
+  margin-top: 500px;
 }
 
 .tweetErrors {
@@ -50,4 +39,56 @@ body {
   border:1px solid #f5aca6;
   padding:10px 10px 10px 10px;
   margin:10px;
+}
+
+.sideBar {
+  display: none;
+}
+
+.sideBar .profileHeader {
+  display: none;
+ }
+
+ .main {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerIMG {
+  width: 100%;
+}
+
+
+
+@media only screen and (min-width: 420px)  {
+  body {
+    font-size: 24px;
+  }
+  .container {
+    margin-top: 150px;
+  }
+
+  .main {
+    width: 70%;
+  }
+  .profileHeader {
+    max-width: 300px;
+    display: none;
+  }
+  .sideBar {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    padding: 20px;
+  }
+  .sideBar .profileHeader {
+    display: block;
+    width: auto;
+    position: static;
+  }
 }

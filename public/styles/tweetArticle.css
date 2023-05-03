@@ -1,7 +1,7 @@
 .newTweetContainer article {
     border: 2px solid black;
     margin: 15px 0px;
-    width: 600px;
+    width: 100%;
     border-radius: 15px;
 }
 
@@ -13,6 +13,7 @@
     display: flex;
     width: 500px;
 }
+
 .tweet {
     display: flex;
     width: 95%;
@@ -20,6 +21,9 @@
     margin-top: 5px;
 }
 
+.avatar {
+    height: 75px;
+}
 
 .tweeter {
     width: 100%;
@@ -29,13 +33,6 @@
 .counter {
     font-weight: bold;
 }
-
-/* .authorLogo {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
-} */
 
 .content {
     word-wrap: break-word;
@@ -55,4 +52,55 @@
 
 .tweetIcons:hover {
     color:beige
+}
+
+@media only screen and (min-width: 420px)  {
+.newTweetContainer article:hover {
+    box-shadow: 5px 10px;
+}
+
+.article {
+    display: flex;
+    width: 500px;
+}
+
+.tweet {
+    display: flex;
+    width: 95%;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.avatar {
+    height: 75px;
+}
+
+.tweeter {
+    width: 100%;
+    flex-grow: 1;
+}
+
+.counter {
+    font-weight: bold;
+}
+
+.content {
+    word-wrap: break-word;
+    width: 100%;
+}
+
+.tweetHeader {
+    display:flex;
+    justify-content: space-between;
+}
+
+.tweetFooter {
+    display: flex;
+    border-top: 2px solid black;
+    justify-content: space-between;
+}
+
+.tweetIcons:hover {
+    color:beige
+}
 }

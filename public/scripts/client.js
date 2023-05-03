@@ -1,4 +1,4 @@
-
+//------------------- Creates Article --------------------------//
 const createTweetElement = function(tweet) {
   const escape = function (str) {
     let div = document.createElement("div");
@@ -10,7 +10,7 @@ const createTweetElement = function(tweet) {
   let $tweet = $(`
   <article>
   <div class="tweet">
-    <img src="${tweet.user.avatars}"/>
+    <img class ="avatar" src="${tweet.user.avatars}"/>
     <div class="tweeter">
       <div class="tweetMain">
         <div class="tweetHeader">
@@ -47,7 +47,7 @@ const escape = function (str) {
     return div.innerHTML;
   };
 
-
+//-------------------- Renders Tweet Data by Prepending --------------------------//
 $(document).ready(() => {
 
 const renderTweets = function(tweets) {
@@ -63,23 +63,7 @@ const renderTweets = function(tweets) {
     $input.focus();
 })
 }
-
-
-
-// const loadTweets = () => {
-//   $.ajax({
-//     url: '/tweets',
-//     method: 'GET',
-//     dataType: 'json',
-//     success: (tweets) => {
-//       renderTweets(tweets);
-//     },
-//     error: (error) => {
-//       console.error(error);
-//     }
-//   });
-// };
-
+//------------------- AJAX GET Request --------------------------//
 const loadTweets = () => {
     $.ajax({
         method: 'GET',
@@ -92,7 +76,7 @@ const loadTweets = () => {
 loadTweets();
 
 const $form = $('#new-tweet-form');
-
+//-------------------- Submit Form --------------------------//
 $form.on('submit', (event) => {
   let maxLength = 10;
   let $tweetErrors = $('#tweetErrors');
@@ -102,7 +86,6 @@ $form.on('submit', (event) => {
     console.log('submitted');
 
     const data = $form.serialize();
-    // console.log("hellllooo: ",$input.val());
 
     if ($input.val() === '') {
       $tweetErrors.text('⚠️ Tweet cannot be empty.');
@@ -115,7 +98,7 @@ $form.on('submit', (event) => {
       $tweetErrors.slideDown('slow');
       return;
     }
-
+//--------------------- AJAX POST Request --------------------------//
     $.ajax({
         method: 'POST',
         url: '/tweets',
